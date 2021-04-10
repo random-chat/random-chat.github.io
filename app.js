@@ -148,6 +148,7 @@ function matching() {
 }
 
 function onChannel() {
+    alert('connected!')
     init();
     channel.onmessage = event => resive(JSON.parse(event.data));
 }
