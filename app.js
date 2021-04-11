@@ -148,7 +148,7 @@ function matching() {
 }
 
 function onChannel() {
-    alert('connected!')
+    document.getElementsByClassName('header')[0].textContent = 'CHAT'
     init();
     channel.onmessage = event => resive(JSON.parse(event.data));
 }
@@ -184,7 +184,7 @@ function appendMessageTag(LR_className, senderName, message) {
 
     $('div.chat:not(.format) ul').append(chatLi);
 
-    $('div.chat').scrollTop($('div.chat').prop('scrollHeight'));
+    document.body.scrollTop = document.body.scrollHeight;
 }
 function sendMessage(message) {
     const data = {
@@ -206,3 +206,15 @@ function resive(data) {
 }
 
 matching()
+/*
+var body = document.documentElement;
+if (body.requestFullscreen) {
+    body.requestFullscreen();
+} else if (body.webkitrequestFullscreen) {
+    body.webkitrequestFullscreen();
+} else if (body.mozrequestFullscreen) {
+    body.mozrequestFullscreen();
+} else if (body.msrequestFullscreen) {
+    body.msrequestFullscreen();
+}
+*/
