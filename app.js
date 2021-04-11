@@ -149,6 +149,7 @@ function matching() {
 
 function onChannel() {
     document.getElementsByClassName('header')[0].textContent = 'CHAT'
+    alert('connected!')
     init();
     channel.onmessage = event => resive(JSON.parse(event.data));
 }
